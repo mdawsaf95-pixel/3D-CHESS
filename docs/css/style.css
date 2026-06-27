@@ -1,0 +1,389 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #2d2d2d;
+    --accent-color: #ff6b6b;
+    --text-color: #ffffff;
+    --border-color: #444;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Authentication Styles */
+.auth-box {
+    background: var(--secondary-color);
+    padding: 50px 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 40px rgba(255, 107, 107, 0.4);
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.auth-box h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+    color: var(--accent-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+    color: #aaa;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+    font-weight: 300;
+}
+
+#facebook-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.fb-login-button {
+    transform: scale(1);
+    transform-origin: center;
+}
+
+.login-note {
+    color: #999;
+    font-size: 0.95em;
+    margin-top: 20px;
+}
+
+#auth-tabs {
+    display: none;
+}
+
+.tab-content {
+    display: none;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    background: var(--primary-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.btn-primary, .btn-secondary {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 10px;
+}
+
+.btn-primary {
+    background: var(--accent-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #ff5252;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: var(--secondary-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: var(--border-color);
+}
+
+/* Game Layout */
+.game-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    width: 100%;
+    height: 100vh;
+    gap: 15px;
+    padding: 15px;
+}
+
+.sidebar {
+    background: var(--secondary-color);
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    overflow-y: auto;
+}
+
+.profile-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.avatar-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 2px solid var(--accent-color);
+}
+
+.profile-section h3 {
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.profile-section p {
+    font-size: 0.9em;
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+.players-list, .game-history {
+    margin-bottom: 25px;
+}
+
+.players-list h4, .game-history h4 {
+    color: var(--accent-color);
+    margin-bottom: 12px;
+    font-size: 0.95em;
+}
+
+.players-list ul, .game-history ul {
+    list-style: none;
+}
+
+.players-list li, .game-history li {
+    padding: 8px;
+    background: var(--primary-color);
+    border-radius: 5px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9em;
+}
+
+.players-list li:hover, .game-history li:hover {
+    background: var(--border-color);
+}
+
+.game-main {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: 15px;
+}
+
+.chess-container {
+    background: var(--secondary-color);
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.game-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.game-controls button, .game-controls select {
+    flex: 1;
+}
+
+.chat-section {
+    background: var(--secondary-color);
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+}
+
+.chat-section h4 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.chat-box {
+    flex: 1;
+    background: var(--primary-color);
+    border-radius: 5px;
+    padding: 10px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.chat-message {
+    margin-bottom: 8px;
+    font-size: 0.85em;
+    padding: 5px;
+}
+
+.chat-message .sender {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.site-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(26, 26, 26, 0.95);
+    border-top: 1px solid var(--border-color);
+    padding: 10px 0;
+    text-align: center;
+    z-index: 100;
+}
+
+.footer-links {
+    display: inline-flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+}
+
+.policy-body {
+    background-color: #111;
+    overflow-y: auto;
+    min-height: 100vh;
+}
+
+.policy-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    color: #ddd;
+}
+
+.policy-header h1 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.policy-header p {
+    color: #999;
+    margin-bottom: 30px;
+}
+
+.policy-content section {
+    margin-bottom: 25px;
+}
+
+.policy-content h2 {
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.policy-content p, .policy-content ul {
+    line-height: 1.8;
+    color: #ccc;
+}
+
+.policy-content ul {
+    padding-left: 20px;
+}
+
+.policy-content li {
+    margin-bottom: 10px;
+}
+
+.policy-footer {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.policy-footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.policy-footer a:hover {
+    text-decoration: underline;
+}
+
+.chat-input {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input input {
+    flex: 1;
+}
+
+.chat-input button {
+    width: auto;
+    padding: 8px 15px;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .game-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none;
+    }
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Chess - Online Multiplayer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfb_ver=v18.0&app_id=2086903965228860&xfbml=1&version=v18.0&cookie=true"></script>
+
+    <div id="app">
+        <!-- Facebook Login Section -->
+        <div id="auth-container" class="container">
+            <div class="auth-box">
+                <h1>🎮 3D Chess Game</h1>
+                <p class="subtitle">Play Chess Online with Friends</p>
+                
+                <div id="facebook-login">
+                    <div 
+                        class="fb-login-button" 
+                        data-width="300" 
+                        data-size="large"
+                        data-button-type="login_with" 
+                        data-layout="default" 
+                        data-auto-logout-link="false" 
+                        data-use-continue-as="false"
+                        onlogin="handleFBLogin()">
+                    </div>
+                    <p class="login-note">Login with Facebook to play</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Game Section -->
+        <div id="game-container" class="container" style="display: none;">
+            <div class="game-layout">
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="profile-section">
+                        <img id="player-avatar" src="" alt="Avatar" class="avatar-img">
+                        <h3 id="player-name">Player Name</h3>
+                        <p id="player-rating">Rating: 1200</p>
+                        <button id="logout-btn" class="btn-secondary">Logout</button>
+                    </div>
+
+                    <div class="players-list">
+                        <h4>Online Players</h4>
+                        <ul id="players-online"></ul>
+                    </div>
+
+                    <div class="game-history">
+                        <h4>Game History</h4>
+                        <ul id="game-history"></ul>
+                    </div>
+                </aside>
+
+                <!-- Main Game Area -->
+                <main class="game-main">
+                    <!-- 3D Canvas -->
+                    <div id="chess-board" class="chess-container"></div>
+
+                    <!-- Game Controls -->
+                    <div class="game-controls">
+                        <button id="new-game-btn" class="btn-primary">New Game</button>
+                        <button id="resign-btn" class="btn-secondary">Resign</button>
+                        <select id="difficulty-level" class="input-field">
+                            <option value="easy">Easy</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+
+                    <!-- Chat Section -->
+                    <div class="chat-section">
+                        <h4>Chat</h4>
+                        <div id="chat-messages" class="chat-box"></div>
+                        <div class="chat-input">
+                            <input type="text" id="chat-input" placeholder="Type a message..." class="input-field">
+                            <button id="send-chat-btn" class="btn-primary">Send</button>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="js/chess-logic.js"></script>
+    <script src="js/three-setup.js"></script>
+    <script src="js/socket-client.js"></script>
+    <script src="js/facebook-auth.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
